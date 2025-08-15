@@ -22,11 +22,8 @@ filtered_df = df[(df['date'] >= start_date) & (df['date'] <= end_date)]
 fig = px.line(filtered_df, x='date', y='sales',title='Daily Sales Over Time')
 
 app.layout = html.Div(children=[
-    html.H1(children='Hello Dash'),
-
-    html.Div(children='''
-        Dash: A web application framework for your data.
-    '''),
+    html.H1("Pink Morsel Sales",
+    id="header"),
 
     dcc.Graph(
         id='line-chart',
